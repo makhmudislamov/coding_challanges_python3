@@ -14,17 +14,28 @@ AB -> 28
 
 
 def excel_column_to_number(column):
+# PSEUDOCODE
   # formula = value * (base ** power)
-
   # declaring var offset = 64
   # declaring var power = 0
-  # iterate the string from right to left:
+  # iterate the string from right to left: DONE
   # value = ord("str") - offset
   # use formula to find the col_number
   # power += 1
-  # return final result  
+  # return final result 
+   
+  offset = 64
+  base = 26
+  power = 0
+  column_num = 0
 
-  column_num = ord(column) - 64
+  for i in range(len(column)-1, -1, -1):
+    #   accessing char in that index
+      char = column[i]
+      value = ord(char) - offset
+      column_num += value * (base ** power)
+      power += 1 
   return column_num
 
 
+print(excel_column_to_number("ZZ"))
