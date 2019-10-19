@@ -16,20 +16,25 @@ Write a function that will return only the last digit of N!, given N.
 """
 
 def factorial_recursive(n):
+    """
+    Return the factorial of the given int
+    """
     # base case
     if n < 2:
         return 1
     else:
         return n * factorial_recursive(n-1)
 
-def last_factorial_digit(n):
-  factorial = str(factorial_recursive(n))
-  print(f"factorial is {factorial}")
-  return int(factorial[-1])
-  
-# input >> N > 0 int, output >> int
-# 
 
+def last_factorial_digit(n):
+  # fairly easy calculation. after 5! the there is a pattern = last digit is 0
+  if n < 5:
+    factorial = str(factorial_recursive(n))
+    print(f"factorial is {factorial}")
+    return int(factorial[-1])
+  else:
+    # because there are 2 and 5 in the multiplication
+    return 0
 
 print(last_factorial_digit(200))
 
