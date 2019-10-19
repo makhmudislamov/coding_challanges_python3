@@ -15,6 +15,21 @@ As you can see, the number can grow to be quite large, quite quickly.
 Write a function that will return only the last digit of N!, given N.
 """
 
+def factorial_recursive(n):
+    # base case
+    if n < 2:
+        return 1
+    else:
+        return n * factorial_recursive(n-1)
 
 def last_factorial_digit(n):
-  pass
+  factorial = str(factorial_recursive(n))
+  print(f"factorial is {factorial}")
+  return factorial[-1]
+  
+# input >> N > 0 int, output >> int
+# 
+
+
+print(last_factorial_digit(100))
+
