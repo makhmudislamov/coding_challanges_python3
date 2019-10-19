@@ -25,11 +25,11 @@ def factorial_recursive(n):
 def last_factorial_digit(n):
   factorial = str(factorial_recursive(n))
   print(f"factorial is {factorial}")
-  return factorial[-1]
+  return int(factorial[-1])
   
 # input >> N > 0 int, output >> int
 # 
 
 
-print(last_factorial_digit(100))
+print(last_factorial_digit(200))
 
