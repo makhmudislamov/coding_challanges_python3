@@ -24,7 +24,16 @@ Display (by printing) the number of tasks that can be completed in T minutes on 
 
 
 def server_time_check(task_config, task_times):
-  return 0
+    # PSEUDOCODE
+    # declare competed variable = 0
+    # time_left variable = task_config[1:]
+    # keep the task_times in the array
+    # iterate over the task_times array:
+    # start substracting each index item from T (use sys.arg[:1] - try) >> time_left variable
+    # after each substraction completed += 1
+    # if  time_left <= 0
+        # return completed
+  print(task_config[1:])
 
 
 ## Please do not change the code below this line
