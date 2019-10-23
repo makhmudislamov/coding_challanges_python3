@@ -20,3 +20,11 @@ def first_missing_positive_integer(integers):
 # find out which one doesnt exist in input array set
 
 
+    # clearing the input from negative numbers
+    integers = [elem for elem in integers if elem >= 0]
+    integers.sort()
+    return integers
+
+
+integers = [-3, -5, 6, 5, 3, 0]
+print(first_missing_positive_integer(integers))
