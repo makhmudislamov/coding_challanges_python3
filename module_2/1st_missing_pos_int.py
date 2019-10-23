@@ -23,21 +23,34 @@ def first_missing_positive_integer(integers):
     found_int = []
 
     for integer in integers:
+        # ignoring negative int
         if integer < 0 :
             continue
+        # extending the empty list and marking the exsiting int
         if integer + 1 > len(found_int):
             extend_size = integer - len(found_int) + 1
             found_int.extend([False] * extend_size)
         found_int[integer] = True
 
-    return found_int
+    missing_int = 0
+    for position in range(1,len(found_int)):
+        if found_int[position] == False:
+            missing_int = position
+            return missing_int
 
-    
+    if missing_int == 0 and len(found_int) == 0:
+        return 1
+    elif missing_int == 0 and len(found_int) > 0:
+        return len(found_int) 
 
-
-
-    
-
-
-integers = [1,2,4]
+integers = [1,2,0]
 print(first_missing_positive_integer(integers))
+
+
+
+# My initial way
+# iterate over the inout and delete all negative nymbers
+# sort the input list
+# create another list that is range (0 - len(input list)
+# turn both list into sets
+# return the smallest difference integer. 
