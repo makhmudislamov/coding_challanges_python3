@@ -13,17 +13,16 @@ def first_missing_positive_integer(integers):
   
 # INPUT >> unsorted array. OUTPUT >> positive int
 # PSEUDOCODE
-# iterate ovver the input list
-# deleted all negative numbers
-# create another list thats length is equal to resixed input list - use range()
-# turn both into SET
-# find out which one doesnt exist in input array set
+# create an empty list
+# for every num in the input list
+    # if the num < 0: ignore it
+    # if the num is larger than the current len of the list, resize the list to be of that length
+    # set the value of the place in the list corresponding with that integer to True
+
+    pass
 
 
-    # clearing the input from negative numbers
-    integers = [elem for elem in integers if elem >= 0]
-    integers.sort()
-    return integers
+    
 
 
 integers = [-3, -5, 6, 5, 3, 0]
