@@ -43,14 +43,5 @@ def first_missing_positive_integer(integers):
     elif missing_int == 0 and len(found_int) > 0:
         return len(found_int) 
 
-integers = [1,2,0]
+integers = [3, 4, -1, 1, 0]
 print(first_missing_positive_integer(integers))
-
-
-
-# My initial way
-# iterate over the inout and delete all negative nymbers
-# sort the input list
-# create another list that is range (0 - len(input list)
-# turn both list into sets
-# return the smallest difference integer. 
