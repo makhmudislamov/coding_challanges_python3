@@ -22,4 +22,7 @@ Do not return anything, modify the input array in-place instead.
 
 
 def rotate_array(input_array, k):
-    pass
+    # PSEUDOCODE:
+    # for k times:
+    # take end of the list item
+    # put it to the beginning
