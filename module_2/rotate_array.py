@@ -26,3 +26,19 @@ def rotate_array(input_array, k):
     # for k times:
     # take end of the list item
     # put it to the beginning
+
+    
+    for t in range(1, k + 1):
+        # getting last element
+        end_element = input_array[-1]
+        # inserting the last elemnt to the start of the array
+        input_array.insert(0, end_element)
+        # deleting the lat element
+        input_array.pop()
+
+    return input_array
+
+input_array = [4, 2, 1, 5, 6]
+k = 3
+print(rotate_array(input_array, 3))
+
