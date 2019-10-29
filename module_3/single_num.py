@@ -16,9 +16,24 @@ def single_number(integers):
 # INPUT >>> non-emtpy array. OUTPUT >>> int
 
 # PSEUDOCODE - brute force
-# create an empty array
 # iterate over the integers arr
-# add each element to empty array
-# at the same time check if the element appears more than once in new array.
-# if not return the array
-  pass
+# use .count to check if the element appears only once
+
+
+    for integer in integers:
+        if integers.count(integer) == 1:
+            return integer
+
+
+
+
+ 
+
+
+
+
+integers = [2, 3, 3, 2, 5, 6, 6]
+
+print(single_number(integers))
+
+
