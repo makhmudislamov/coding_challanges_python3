@@ -20,9 +20,31 @@ def single_number(integers):
 # use .count to check if the element appears only once
 
 
+    # for integer in integers:
+    #     if integers.count(integer) == 1:
+    #         return integer
+
+# ANOTHER SOLUTION
+# create set 
+# add array elements to set only if it is not in the set already
+
+
+    int_set = set()
+
     for integer in integers:
-        if integers.count(integer) == 1:
-            return integer
+
+        if not integer in int_set:
+            int_set.add(integer)
+        elif integer in int_set:
+            int_set.remove(integer)
+    
+    return int_set.pop()
+   
+        
+       
+
+
+
 
 
 
