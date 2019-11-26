@@ -46,7 +46,13 @@ def pascal_triangle(numRows):
   #                 [1,1]
   #                ]
 
+  # SOLUTION
+  pascal_triangle = []
+
+  for row in range(numRows):
+      pascal_triangle.append([])
   
+  print(pascal_triangle)
 
 
-  pass
+pascal_triangle(5)
