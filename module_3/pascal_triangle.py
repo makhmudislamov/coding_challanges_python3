@@ -50,9 +50,16 @@ def pascal_triangle(numRows):
   pascal_triangle = []
 
   for row in range(numRows):
-      pascal_triangle.append([])
-  
+    pascal_triangle.append([])
+
+    if numRows <= 2:    
+      for inner_l in pascal_triangle:
+        inner_l.append(1)
+
+
+
+
   print(pascal_triangle)
 
 
-pascal_triangle(5)
+pascal_triangle(2)
