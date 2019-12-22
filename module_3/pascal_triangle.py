@@ -48,18 +48,28 @@ def pascal_triangle(numRows):
 
   # SOLUTION
   pascal_triangle = []
+# # enumerate?
+#   for row in range(numRows):
+#     # each nested loop's length grows 1 to numRows
+#     pascal_triangle.append([])
 
-  for row in range(numRows):
-    pascal_triangle.append([])
+#     if numRows <= 2:    
+#       for inner_l in pascal_triangle:
 
-    if numRows <= 2:    
-      for inner_l in pascal_triangle:
-        inner_l.append(1)
-
-
-
-
-  print(pascal_triangle)
+#         inner_l.append(1)
 
 
-pascal_triangle(2)
+#   print(*pascal_triangle, sep='\n')
+  for i in range(0, numRows):
+      coff = 1
+
+      for _ in range(1, numRows-i):
+          print("  ", end="")
+
+      for k in range(0, i+1):
+          print("  ", coff, end="")
+          coff = int(coff * (i - k) / (k + 1))
+      print()
+
+
+pascal_triangle(5)
