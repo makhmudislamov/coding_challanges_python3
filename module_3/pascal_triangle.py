@@ -60,16 +60,27 @@ def pascal_triangle(numRows):
 
 
 #   print(*pascal_triangle, sep='\n')
-  for i in range(0, numRows):
-      coff = 1
+  # for i in range(numRows):
+  #     coff = 1
 
-      for _ in range(1, numRows-i):
-          print("  ", end="")
+  #     for _ in range(1, numRows-i):
+  #       print("  ", end="")
 
-      for k in range(0, i+1):
-          print("  ", coff, end="")
-          coff = int(coff * (i - k) / (k + 1))
-      print()
+  #     for k in range(0, i+1):
+  #         print("  ", coff, end="")
+  #         coff = int(coff * (i - k) / (k + 1))
+          
+  #     print()
+  for i in range(numRows):
+    pascal_triangle.append([])
+    pascal_triangle[i].append(1)
+    for j in range(1, i):
+      pascal_triangle[i].append(pascal_triangle[i-1][j-1] + pascal_triangle[i-1][j])
+    if(numRows!=0):
+      pascal_triangle[i].append(1)
+
+  print('\n'.join([str(lst) for lst in pascal_triangle]))
+ 
 
 
-pascal_triangle(5)
+pascal_triangle(3)
