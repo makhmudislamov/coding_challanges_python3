@@ -5,14 +5,18 @@ Do not allocate extra space for another array, you must do this by modifying the
 """
 
 def removeDuplicates(nums) -> int:
+    index = 0
+    print(f"initial list {nums}")  
 
-    print(f"initial list {nums}")
-    for _, item in enumerate(nums):
-        if nums.count(item) > 1:
-            nums.remove(item)
+    while index < len(nums) - 1:
+        if nums[index] == nums[index + 1]:
+            del nums[index]
+        else:
+            index += 1
     print(f"modified list {nums}")
     return len(nums)
 
 
-nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+# nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+nums = [0,0,0,0,0,0,0,0] 
 print(removeDuplicates(nums))
