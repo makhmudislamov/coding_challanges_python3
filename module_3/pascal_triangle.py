@@ -47,7 +47,18 @@ def pascal_triangle(numRows):
   #                ]
 
   # SOLUTION
-  pascal_triangle = []
+  # pascal_triangle = []
+  triangle = []
+
+  for i in range(numRows):
+      row = []
+      row.append(1)
+      for j in range(i):
+          # row.append(2+j)
+          triangle[i].append(triangle[i-1][j-1] + triangle[i-1][j])
+      triangle.append(row)
+
+  print(triangle)
 # # enumerate?
 #   for row in range(numRows):
 #     # each nested loop's length grows 1 to numRows
@@ -71,16 +82,20 @@ def pascal_triangle(numRows):
   #         coff = int(coff * (i - k) / (k + 1))
           
   #     print()
-  for i in range(numRows):
-    pascal_triangle.append([])
-    pascal_triangle[i].append(1)
-    for j in range(1, i):
-      pascal_triangle[i].append(pascal_triangle[i-1][j-1] + pascal_triangle[i-1][j])
-    if(numRows!=0):
-      pascal_triangle[i].append(1)
+  # for i in range(numRows):
+  #   # appending nested lists
+  #   pascal_triangle.append([])
+  #   # appending 1 inside each nested list
+  #   pascal_triangle[i].append(1)
+  #   for j in range(1, i):
+  #     # print(j)
+  #     pascal_triangle[i].append(pascal_triangle[i-1][j-1] + pascal_triangle[i-1][j])
+  #   if(numRows!=0): 
+  #     pascal_triangle[i].append(1)  
 
-  print('\n'.join([str(lst) for lst in pascal_triangle]))
+  # print('\n'.join([str(lst) for lst in pascal_triangle]))
+  # # print(pascal_triangle)
  
 
 
-pascal_triangle(3)
+pascal_triangle(6)
