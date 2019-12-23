@@ -2,10 +2,12 @@ def removeDuplicates(nums) -> int:
     prev = 0
     next_el = prev + 1
 
-    while next_el < len(nums):
+    # while next_el < len(nums):
+    for _ in range(len(nums)+1):
         if nums[prev] == nums[next_el]:
             del nums[next_el]
             prev += 1
+    print(nums)
     return len(nums)
 
 
