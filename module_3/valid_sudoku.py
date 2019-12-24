@@ -25,41 +25,47 @@ Output: true
 
 def validate_sudoku_board(board):
     valid_items = ['.', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+    # row_ind = 0
     # iterate through each nested list
     # for row in board:
-    #     print(f"this is row {row}")
-    #     for box in row:
+        # print(f"this is row {row}")
+        # for box in row:
    
-    #         print(f"this is box {box}")
-    #         # this is horizontal check
-    #         if valid_items.count(box) >= 1 and box not in valid_items:
-    #             print('here')
-    #             return False
+            # print(f"this is box {box}")
+            # print(box)
+            # this is horizontal check
+            # if valid_items.count(box) >= 1 and box not in valid_items:
+            #     print('here')
+            #     return False
 
-    #         elif valid_items.count(box) >= 1 and board[i][j] not in valid_items:
-    #             print('here2', board[i][j])
-    #             return False
+        # for col_item in row[row_ind]:
+        #     print("column item", col_item)
+        #     # row_ind += 1
+        #     if valid_items.count(col_item) >= 1 and col_item not in valid_items:
+        #         # return False
+        #         print("here")
         
     # return True
-    column_indx = 0
-    row_indx = 0
-    while column_indx < 9 and row_indx < 9:
-        column_item = board[column_indx][row_indx]
-        print(column_item)
-        if valid_items.count(column_item) > 1 and column_item not in valid_items:
-            # print(column_item)
+
+    # WHILE LOOP
+    y = 0
+    x = 0
+    while x < len(board) + 1:
+        while y < len(board) + 1:
+            # print('inner while')
+            col_item = board[y][x]
+            print(col_item)
             
-            return False
-        column_indx += 1
-        if column_indx == 8:
-            row_indx += 1
+            if col_item not in valid_items and valid_items.count(col_item) >= 1:
+                # return False
+                print('inside if')
+            y += 1
+            if y == 9:
+                y = 0
+                x += 1
+        x += 1
+
         
-    return True
-        # iterate through column first
-        
-        # row_indx += 1
-        # column_indx += 1
         
     
 
