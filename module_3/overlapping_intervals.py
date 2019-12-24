@@ -12,13 +12,22 @@ Make sure the returned intervals are sorted.
 def merge_overlapping_intervals(intervals):
     # if the input is empty
     # return the input
-  for interval in intervals:
+    if len(intervals) == 0:
+        return intervals
+
+    index = 0
+    while index < len(intervals) - 1:
     #   check if the last item of an array is greater or equal to the first item of next array
-    #   if so pop those items and merge the arrays
-    #   return the array
+        if intervals[index][1] > intervals[index + 1][0]:
+            del intervals[intervals[index][1]]
+            del intervals[intervals[index + 1][0]]
+            intervals[index] + intervals[index + 1]
+        else:
+            return intervals
+        return intervals
     # else return the input itself
-    pass
+    # pass
 
 
-intervals = [1, 3], [2, 6], [8, 10], [15, 18]
-merge_overlapping_intervals(intervals)
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+print(merge_overlapping_intervals(intervals))
