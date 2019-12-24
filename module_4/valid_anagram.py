@@ -26,9 +26,10 @@ def valid_anagram(s, t):
     if len(s) != len(t):
         return False
     for char in s:
+        print(char)
         if char not in t:
             return False
-    return False
+    return True
          
 
 # iterate throgh first string
@@ -36,10 +37,10 @@ def valid_anagram(s, t):
 # return true
 # else
 # false
-# s = "rat"
-# t = "car"
+s = "rat"
+t = "car"
 
-s = "anagram"
-t = "nagaram"
+# s = "anagram"
+# t = "nagaram"
 
 print(valid_anagram(s, t))
