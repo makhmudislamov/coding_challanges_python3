@@ -8,7 +8,15 @@ Given [1, 2, 3, 4]
 One possible answer : [2, 1, 4, 3]
 Another possible answer : [4, 1, 3, 2]
 """
-
+import random
 
 def wave_array(integers):
-  pass
+    # iterate throught the array
+    # shuffle every other elements
+    for index in range(len(integers) - 1):
+        integers[index], integers[index + 1] = integers[index + 1], integers[index]
+    return integers
+
+
+integers = [1, 2, 3, 4]
+print(wave_array(integers))
