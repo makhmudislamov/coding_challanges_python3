@@ -31,9 +31,9 @@ def validate_sudoku_board(board):
         for box in row:
             print(f"this is box {box}")
             if valid_items.count(box) >= 1 and box not in valid_items:
-                return True
+                return False
         
-    return False
+    return True
     # check if the item is within 1-9 and occured only once
     # if so return true
     # else return false
