@@ -20,6 +20,7 @@ def pascal_triangle(numRows):
   # INPUT >> numRows - int
   # OUTPUT >> pascal's triangle - nested list with integers
 
+
   pascal_triangle = []
 
   for i in range(numRows):
@@ -35,11 +36,9 @@ def pascal_triangle(numRows):
     if(numRows!=0): 
       pascal_triangle[i].append(1)  
 
-  
+  # print('\n'.join([str(lst) for lst in pascal_triangle]))
   pascal_triangle[0].pop()
-  # print(pascal_triangle)
-  # prints as triangle
-  print('\n'.join([str(lst) for lst in pascal_triangle]))
+  print(pascal_triangle)
  
 
 pascal_triangle(7)
