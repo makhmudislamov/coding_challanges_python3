@@ -24,14 +24,16 @@ Output: true
 
 
 def validate_sudoku_board(board):
-    valid_items = [".", 1,2,3,4,5,6,7,8,9]
+    valid_items = ['.', 1, 2, 3, 4, 5, 6, 7, 8, 9]
     # iterate through each nested list
     for row in board:
+        print(f"this is row {row}")
         for box in row:
-            if box in valid_items and box.count() == 1:
+            print(f"this is box {box}")
+            if valid_items.count(box) >= 1 and box not in valid_items:
                 return True
-            else:
-                return False
+        
+    return False
     # check if the item is within 1-9 and occured only once
     # if so return true
     # else return false
@@ -49,5 +51,5 @@ board = [
             [".", ".", ".", "4", "1", "9", ".", ".", "5"],
             [".", ".", ".", ".", "8", ".", ".", "7", "9"]
         ]
-        
+
 print(validate_sudoku_board(board))
