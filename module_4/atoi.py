@@ -19,18 +19,24 @@ Assume we are dealing with an environment which could only store integers within
 import re
 def atoi(a):
     clean = ''
+    min_plus = '-+'
     # cleaning from whitespace
     a = re.sub(' ', '', a)
+    if a[0].isalpha():
+        # print(a[0])
+        return 0
     for char in a:
         # if char is not anumber
-        if not char.isnumeric():
-            return 0
-        # return 0
-        # elif start appending the char to clean until you reach letter
-        else:
+        if char.isnumeric() or char in min_plus:
             clean += char
-            print("isnumeric", char.isnumeric())
-    return clean
+            # print("clean", clean)
+    if int(clean) >= 2**32:
+        return 2**32
+    elif int(clean) <= -(2**31):
+        return -(2**31)
+    else:
+        return int(clean)
 
-a = ' 42a'
+
+a = '4193 with words'
 print(atoi(a))
