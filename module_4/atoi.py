@@ -16,7 +16,21 @@ Note:
 Only the space character ' ' is considered as whitespace character.
 Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 """
-
-
+import re
 def atoi(a):
-    pass
+    clean = ''
+    # cleaning from whitespace
+    a = re.sub(' ', '', a)
+    for char in a:
+        # if char is not anumber
+        if not char.isnumeric():
+            return 0
+        # return 0
+        # elif start appending the char to clean until you reach letter
+        else:
+            clean += char
+            print("isnumeric", char.isnumeric())
+    return clean
+
+a = ' 42a'
+print(atoi(a))
