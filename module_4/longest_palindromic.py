@@ -13,31 +13,31 @@ Output: "bb"
 
 
 def longest_palindrome(input_string):
-    # declare palindromic substring
-    # it should start from the first char and should expand
-    # palindromic = ""
-
-    # iterate over the input:
-    # check if the current substring is equal to its reverse
-    # return the palindromic substring
-    
-    # for char in input_string:
-    #     palindromic += char
-
-    #     if len(palindromic) == 1 or  palindromic != palindromic[::-1]:
-    #         continue
-    #     else:
-    #         return palindromic
-
-    # input_string = list(input_string)
+    """
+    Return the first 
+    """
     # ==============================
-     # could be more universal version:
+    # could be more universal version:
+    # wrap input into list
+    # check if eny string is palindrome
+    # else continue
     # keep removing char from the end and beginning of the string
     # after each removal check if current string is palindromic
     # if so return it
+    input_string = input_string.split(' ')
+    print(input_string)
+    palindromes = []
+    for string in input_string:
+        print(string)
+        if len(string) > 1 and string == string[::-1]:
+            palindromes.append(string)
+        else:
+            continue
+
+    input_string = ' '.join(input_string)
+    print("here", input_string)
     start = 1
     end = len(input_string)-2
-
     while input_string != input_string[::-1] or len(input_string) != 0:
 
         input_string =  input_string[start::]
@@ -46,9 +46,6 @@ def longest_palindrome(input_string):
             # print('not yet')
             input_string = input_string[:end:]
             # print("del end", input_string)
-
-        
-
         if input_string == input_string[::-1]:
 
             return input_string
@@ -59,8 +56,9 @@ def longest_palindrome(input_string):
     return input_string
 
 
-
-input_string = "babad"
+# input_string = "babad"
+input_string = "abba is babaabab"
+# input_string = 'i want to be a racecar driver'
 print(longest_palindrome(input_string))
+# if you pass this you good: 'i want to be a racecar driver' 
 
-# if you pass this you good: 'i want to be a racecar driver'
