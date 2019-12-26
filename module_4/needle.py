@@ -25,4 +25,20 @@ def strStr(haystack, needle):
     # if the there is a match
     # return the index
     # else return -1
-    pass
+    start = 0
+    end = start + len(needle)
+    substring = haystack[start:end]
+    print(substring)
+    while end < len(haystack):
+        # print(substring)
+        if substring != needle:
+            start += 1
+        else:
+            return start
+    
+    return -1
+
+
+haystack = "hello"
+needle = "ll"
+print(strStr(haystack, needle))
