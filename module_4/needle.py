@@ -17,8 +17,8 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 
 
 def strStr(haystack, needle):
-    # if haystack is empty
-    # return 0
+    if not haystack:
+        return 0
 
     # find out the length of the needle
     # use its length as length of substring to iterate over haystack
@@ -26,13 +26,13 @@ def strStr(haystack, needle):
     # return the index
     # else return -1
     start = 0
-    end = start + len(needle)
-    substring = haystack[start:end]
-    print(substring)
-    while end < len(haystack):
-        # print(substring)
-        if substring != needle:
+    end = len(needle)
+    while end < len(haystack) + 1:
+        substring = haystack[start:end]
+        print(substring)
+        if substring != needle:    
             start += 1
+            end += 1
         else:
             return start
     
