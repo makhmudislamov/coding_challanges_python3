@@ -17,4 +17,12 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 
 
 def strStr(haystack, needle):
+    # if haystack is empty
+    # return 0
+
+    # find out the length of the needle
+    # use its length as length of substring to iterate over haystack
+    # if the there is a match
+    # return the index
+    # else return -1
     pass
