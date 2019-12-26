@@ -11,52 +11,30 @@ Input: AACECAAAA
 Output: 2
 """
 def minimumCharacters(string):
-    # base case the input is already a palindrome
-    # check if reversed is equal to original str
-    # return 0
-    # set counter to zero
-    # while reversed string is not equal to original string:
-    # insert last string to the beginning
-    # incement the counter
-    # instered_str = 0
-    # last_char = len(string)-1
-    # print(string[last_char])
-    # string = list(string)[::-1]
-    # prepended_index = 0
-    # # mid_indx = len(string) // 2
-    # # mid_char = string[mid_indx]
-    # while string != string[::-1]:
-    #     while last_char >= 0:
-    #         inserted_char = string[last_char] # gets the last char
-    #         last_char -= 1
-    #     string[prepended_index] = inserted_char
-    #     prepended_index += 1
-    #     instered_str += 1
-    #     print(string)
-    #     # break
-    # return instered_str
-    # return list(string)[::-1]
-    # input_char = 0
-    reversed_copy = list(string)[::-1]
-    copys_last = len(reversed_copy)-1
-    strings_char = 0
+# create empty string 
+    prep_arr = []
+    string = list(string)
+    counter = 0
+    strings_last = len(string) - 1
 
-    while reversed_copy != reversed_copy[::-1]:
-        if reversed_copy[copys_last] != string[strings_char]:
-            reversed_copy.append(string[strings_char])
-            copys_last += 1
-            strings_char += 1
-        else: 
-            strings_char += 1
-    return len(reversed_copy) - len(string)
+# loop backwards from input string
+    while strings_last != 0:
+        # append prep arrap (last item of input string)
+        prep_arr.append(string[strings_last])
+        strings_last -= 1
+        counter += 1
+        prep_arr.extend(string)
+        # if palindrom end the loop
+        if prep_arr == prep_arr[::-1]:
+            return counter
+        else:
+            prep_arr = prep_arr[:counter]
+            continue
+
+    return counter
 
 
 string = "AACECAAAAAAC"
 print(minimumCharacters(string))
 
-# check with this too: AACECAAAAAAC
-# create an reversed copy of input
-# if the last char of rev is not equal to first (increment) char of original input
-# append to rev.copy >> increment reversed copy count = later return
-# keep looping until reversed copy's reverse is equal
 
