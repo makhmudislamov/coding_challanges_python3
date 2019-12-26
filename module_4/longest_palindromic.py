@@ -13,4 +13,10 @@ Output: "bb"
 
 
 def longest_palindrome(input_string):
+    # declare palindromic substring
+    # it should start from the first char and should expand
+
+    # iterate over the input:
+    # check if the current substring is equal to its reverse
+    # return the palindromic substring
     pass
