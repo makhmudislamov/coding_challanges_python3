@@ -24,15 +24,15 @@ def find_index(sorted_list, target):
     
     
     for num in sorted_list:
-        
+        index = sorted_list.index(num)
         print(num)
         if num == target:
             return sorted_list.index(num)
-        else:
-            return sorted_list.index(target-1)
+        elif sorted_list[index] <= target <= sorted_list[index + 1]:
+            return index + 1
 
 
 sorted_list = [1, 3, 5, 6]
-target = 5
+target = 7
 
 print(find_index(sorted_list, target))
