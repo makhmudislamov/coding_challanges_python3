@@ -1,5 +1,6 @@
 """
-Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+Given a sorted array and a target value, return the index if the target is found. 
+If not, return the index where it would be if it were inserted in order.
 You may assume no duplicates in the array.
 
 Examples:
@@ -12,4 +13,9 @@ Examples:
 
 
 def find_index(sorted_list, target):
-  pass
+    # iterate over the input
+    # if an element is equal to target
+    # return its index
+    # else
+    # return the index of element that is target-1 
+    pass
