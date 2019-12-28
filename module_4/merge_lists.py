@@ -21,5 +21,19 @@ def merge_sorted_lists(nums1, nums2):
     # iterate over the list
     # if element is out of order swap the elements
     # return the modified list
-    
-    pass
+
+    nums1.extend(nums2)
+    print(nums1)
+    index = 0
+    while index < len(nums1) - 1:
+        if nums1[index] > nums1[index + 1]:
+            print(f"sorting {nums1}")
+            nums1[index], nums1[index + 1] = nums1[index + 1], nums1[index]
+        index += 1
+
+    return nums1
+
+
+nums1 = [1, 2, 3]
+nums2 = [2, 5, 6]
+print(merge_sorted_lists(nums1, nums2))
