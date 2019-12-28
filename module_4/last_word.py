@@ -14,4 +14,13 @@ Please make sure you try to solve this problem without using library functions. 
 
 
 def length_of_last_word(words):
+    # if the input is empty
+    # return 0
+
+    # declare counter
+    # access the last word in the input via index
+    # iterate through the word
+    # increment the counter - length
+    # return the counter
+    
     pass
