@@ -16,5 +16,10 @@ Output: [1,2,2,3,5,6]
 
 
 def merge_sorted_lists(nums1, nums2):
-    # modify num1 in-place
-    return
+    
+    # merge two lists - nums1 + nums2
+    # iterate over the list
+    # if element is out of order swap the elements
+    # return the modified list
+    
+    pass
