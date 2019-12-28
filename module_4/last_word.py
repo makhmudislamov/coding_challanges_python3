@@ -22,5 +22,23 @@ def length_of_last_word(words):
     # iterate through the word
     # increment the counter - length
     # return the counter
-    
-    pass
+    if not words:
+        return 0
+    index = len(words) - 1
+    length = 0
+    while index >= 0:
+        word = words[index]
+        index -= 1
+        print(word)
+        length += 1
+        if word == ' ':
+            length -= 1
+            return length
+        elif index == 0:
+            length += 1
+            return length
+
+
+
+words = "aaa"
+print(length_of_last_word(words))
