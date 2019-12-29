@@ -19,9 +19,27 @@ Return 0 / 1 ( 0 if the element is not present, 1 if the element is present ) fo
 
 
 def matrix_search(matrix, target):
-    # figure out in which neste list the target could be
-    # by checking in which nested lists range the target might be - use index
-    # focus on the relative nested list
-    # if the target is out of range of the whole list - first item - last item
-    # return 0
-    pass
+
+    last_element = matrix[len(matrix)-1][len(matrix[len(matrix)-1])-1]
+    if target < matrix[0][0] or last_element < target:
+        return 0
+ 
+    for inner_list in matrix:
+        if target in inner_list:
+            return 1
+     
+    return 0
+    
+    
+
+   
+
+
+matrix = [
+            [1,  3,  5,  7],
+            [10, 11, 16, 20],
+            [23, 30, 34, 50]
+         ]
+target = 13
+
+print(matrix_search(matrix, target))
