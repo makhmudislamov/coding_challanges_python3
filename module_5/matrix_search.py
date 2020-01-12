@@ -30,32 +30,6 @@ def matrix_search(matrix, target):
      
     return 0
     
-    
-#   rowIndex = 0
-  
-#   while rowIndex < len(matrix):
-#     if matrix[rowIndex][0] <= target and matrix[rowIndex][-1] >= target:
-#       # it's in this row
-#       start = 0
-#       end = len(matrix[rowIndex])-1
-      
-      
-#       while start < end:
-#         pivot = ((end - start) // 2) + start
-#         if matrix[rowIndex][pivot] == target or matrix[rowIndex][end] == target:
-#           return 1
-#         if matrix[rowIndex][pivot] > target:
-#             end = pivot
-#         else:
-#             start = pivot + 1
-        
-#       rowIndex += 1 # didn't find it in this row
-        
-#     else:
-#       rowIndex += 1
-#   return 0
-   
-
 
 matrix = [
             [1,  3,  5,  7],
