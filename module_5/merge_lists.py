@@ -44,7 +44,7 @@ def merge_sorted_lists(nums1, nums2):
     nums2_indx = 0
 
     while nums2_indx < len(nums2):
-        if nums2[nums2_indx] <= nums1[nums1_indx]:
+        if nums2[nums2_indx] <= nums1[nums1_indx] or nums1[nums1_indx] == 0:
             nums1.insert(nums1_indx, nums2[nums2_indx])
             nums1.pop()
             nums2_indx += 1
