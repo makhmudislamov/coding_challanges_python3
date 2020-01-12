@@ -13,13 +13,10 @@ Hints on the original problem: https://www.interviewbit.com/problems/rotated-arr
 
 
 def find_pivot_index(input_list):
-  # List is sorted, but then rotated.
-  # Find the minimum element in less than linear time
-  # return it's index
-  pass
-#   Pseudocode
-# min_elem = None
-# while curr_elem is larger than previous elem:
-# check the next elem
-# else, that elem is minimum element
-# return the minimum element
+ 
+
+    for cur_elem_index in range(1, len(input_list)):
+        if input_list[cur_elem_index] < input_list[cur_elem_index - 1]:
+            return cur_elem_index
+    
+    return 0
