@@ -14,9 +14,30 @@ Hints on the original problem: https://www.interviewbit.com/problems/rotated-arr
 
 def find_pivot_index(input_list):
  
-
-    for cur_elem_index in range(1, len(input_list)):
-        if input_list[cur_elem_index] < input_list[cur_elem_index - 1]:
-            return cur_elem_index
+    # BRUTE FORCE - LINEAR 
+    # for cur_elem_index in range(1, len(input_list)):
+    #     if input_list[cur_elem_index] < input_list[cur_elem_index - 1]:
+    #         return cur_elem_index
     
-    return 0
+    # return 0
+
+    # SUBLINEAR
+
+    start = 0
+    end = len(input_list) - 1
+    min_indx = 0
+
+    while start < end - 1: #  until there are no elements between start and end
+        if end - start % 2 == 0:
+            pivot = int((end - start) / 2 ) + start
+        else:
+            pivot = int((end - start + 1) / 2) + start
+        
+        if input_list[pivot] < input_list[min_indx]:
+            end = pivot
+            min_indx = pivot
+        else:
+            start = pivot
+    
+    return min_indx
+
