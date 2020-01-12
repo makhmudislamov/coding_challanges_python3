@@ -17,3 +17,9 @@ def find_pivot_index(input_list):
   # Find the minimum element in less than linear time
   # return it's index
   pass
+#   Pseudocode
+# min_elem = None
+# while curr_elem is larger than previous elem:
+# check the next elem
+# else, that elem is minimum element
+# return the minimum element
