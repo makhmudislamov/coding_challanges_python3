@@ -39,18 +39,34 @@ def merge_sorted_lists(nums1, nums2):
     # return nums1
 
     # SUBLINEAR APPROACH
+    # TODO: needs bug fix for the test cases at the end
     nums1_indx = 0
     nums2_indx = 0
 
-    while nums1_indx < len(nums2):
-        if nums2[nums2_indx] >= nums1[nums1_indx] or nums1[nums1_indx] == 0:
-            # insert nums2[nums2_indx] at nums1[nums1_indx]
-            # delete the last element in nums1
+    while nums2_indx < len(nums2):
+        if nums2[nums2_indx] <= nums1[nums1_indx]:
+            nums1.insert(nums1_indx, nums2[nums2_indx])
+            nums1.pop()
             nums2_indx += 1
-        else:
+        else:   
             nums1_indx += 1
 
+    return nums1
 
-nums1 = [1, 2, 3, 0, 0, 0]
-nums2 = [2, 5, 6]
+
+# nums1 = [1, 2, 3, 0, 0, 0]
+# nums2 = [2, 5, 6]
+# print(merge_sorted_lists(nums1, nums2))
+
+# Leetcode test - no pass
+nums1 = [-1, 0, 0, 3, 3, 3, 0, 0, 0]
+# 6
+nums2 = [1, 2, 2]
+# 3
 print(merge_sorted_lists(nums1, nums2))
+
+# Leetcode test - no pass
+# [4, 5, 6, 0, 0, 0]
+# 3
+# [1, 2, 3]
+# 3
