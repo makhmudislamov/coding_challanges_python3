@@ -39,7 +39,7 @@ def merge_sorted_lists(nums1, nums2):
     # return nums1
 
     # SUBLINEAR APPROACH
-    # TODO: needs bug fix for the test cases at the end
+    # TODO: needs bug fix for the test cases at the end >> visualize with pythontutor.com
     nums1_indx = 0
     nums2_indx = 0
 
