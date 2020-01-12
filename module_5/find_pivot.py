@@ -28,10 +28,10 @@ def find_pivot_index(input_list):
     min_indx = 0
 
     while start < end - 1: #  until there are no elements between start and end
-        if end - start % 2 == 0:
-            pivot = int((end - start) / 2 ) + start
-        else:
-            pivot = int((end - start + 1) / 2) + start
+        # if end - start % 2 == 0:
+        pivot = int((end - start) // 2 ) + start
+        # else:
+            # pivot = int((end - start + 1) / 2) + start
         
         if input_list[pivot] < input_list[min_indx]:
             end = pivot
@@ -41,3 +41,7 @@ def find_pivot_index(input_list):
     
     return min_indx
 
+
+input_list = [4, 5, 6, 7, 0, 1, 2]
+
+print(find_pivot_index(input_list))
