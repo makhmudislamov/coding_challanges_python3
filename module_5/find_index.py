@@ -37,14 +37,16 @@ def find_index(sorted_list, target):
     end = len(sorted_list)
 
     while start < end:
-        pivot = (start + (end - start)) // 2
-        print(pivot)
+        pivot = start + (end - start) // 2
+        
         if sorted_list[pivot] < target:
-            start = pivot
+            start = pivot + 1
+            print(sorted_list[start])
         else:
-            end = pivot + 1
+            end = pivot 
     
-    return pivot
+    return start
+
 
 sorted_list = [1, 3, 5, 9, 10]
 target = 3
