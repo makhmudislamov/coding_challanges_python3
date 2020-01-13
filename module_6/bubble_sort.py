@@ -23,14 +23,26 @@ Done! Total swaps: 4.
 
 
 def bubble_sort_swaps(nums):
-    # count_swaps = 0
-    # index = 0
+    count_swaps = 0
+    index = 0
 
     # until the last element of the list:
-    # if current element is greater than the next element
-    # swap the elements
+    while index < len(nums) - 1:
+        if nums[index] > nums[index + 1]:
+            nums[index], nums[index + 1] = nums[index + 1], nums[index]
+            count_swaps += 1
+            index += 1
+        else:
+            index += 1
+        print(nums)
+
+    return count_swaps
+    
+
     # increment count_swaps
     # increment index
     # else just increment the index
 
-  pass
+nums = [6, 2, 4, 3]
+
+print(bubble_sort_swaps(nums))
