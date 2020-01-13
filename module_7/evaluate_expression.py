@@ -34,6 +34,17 @@ def evaluate_expression(expression):
             # if its "+"
             # pop off the last two elements in the stack
             # add them and append them to stack
-            
+    stack = []
 
-    pass
+    for char in expression:
+        if char.isnumeric():
+            stack.append(int(char))
+        else:
+            if char == "+":
+                a = stack.pop()
+                b = stack.pop()
+                stack.append(a + b)
+    return stack.pop()
+
+print(evaluate_expression(["1", "3", "+"]))
+    
