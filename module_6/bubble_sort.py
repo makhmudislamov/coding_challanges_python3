@@ -26,15 +26,23 @@ def bubble_sort_swaps(nums):
     count_swaps = 0
     index = 0
 
+    not_swapped = True
+
+    while not_swapped:
     # until the last element of the list:
-    while index < len(nums) - 1:
-        if nums[index] > nums[index + 1]:
-            nums[index], nums[index + 1] = nums[index + 1], nums[index]
-            count_swaps += 1
-            index += 1
-        else:
-            index += 1
-        print(nums)
+        not_swapped = False
+        while index < len(nums) - 1:
+            if nums[index] > nums[index + 1]:
+                nums[index], nums[index + 1] = nums[index + 1], nums[index]
+                count_swaps += 1
+                index += 1
+                not_swapped = True
+            else:
+                index += 1
+            print(nums)
+            # print(index)
+        index = 0
+        
 
     return count_swaps
     
