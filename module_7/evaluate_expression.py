@@ -26,4 +26,14 @@ The answer to this expression is 0.
 
 
 def evaluate_expression(expression):
+    # create a stack
+    # loop over the expressions
+        # if the char is a number
+        # append the stack
+        # else
+            # if its "+"
+            # pop off the last two elements in the stack
+            # add them and append them to stack
+            
+
     pass
