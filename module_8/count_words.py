@@ -34,4 +34,38 @@ them 1
 
 
 def count_words(text):
-    pass
+  # INPUT >> string
+  # OUTPUT >> string
+
+  # PSEUDOCODE
+  # split the text into words
+    tokens = text.split(" ")
+    # create a dict to hold the key, value
+    counts = {}
+
+    # loop over the string:
+    for token in tokens:
+        # lowercase and cleanup from punctuation
+        word = token.lower().replace(",", "").replace(".", "")
+
+        # print(word)
+    # if the word is in dict:
+        if counts.get(word):
+            counts[word] += 1
+    # otherwise
+        else:
+        # add the word to the dictionary
+            counts[word] = 1
+
+    # create an empty string
+    word_stat = ""
+    # loop over the dict:
+
+    for word, count in counts.items():
+        word_stat += word + " " + str(count) + "\n"
+    # add key, value stat to the string
+    return word_stat
+
+
+  # return the string
+print(count_words("I do not like green eggs and ham, I do not like them, Sam-I-Am"))
