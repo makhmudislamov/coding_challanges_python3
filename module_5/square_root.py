@@ -27,9 +27,16 @@ def square_root(num):
     # variable ** 2
     # increment the variable
 
-    # return
-    pass
+    exponent = 0
+    n = 0
+    while exponent < num:
+        exponent = n ** 2
+        print(exponent)
+        n += 1
+
+    return n - 1
+    # pass
 
 
-sampleInput = 9
+sampleInput = 8
 print(square_root(sampleInput))
