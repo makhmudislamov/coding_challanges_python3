@@ -42,31 +42,33 @@ Return a dictionary with logging statistics, that is formatted like so ( don't w
 
 def log_stats(logs):
     
-    # create dictionary to hold the log_stat
-    # loop over the input:
-        # first element is main code
-        # if main code is in the dict:
-            # increment
-        # else set its count to one
 	stat_dict = {}
 
 	data_index = 0
 
 	while data_index < len(logs):
-		one_stat_index = 0
+		# transforming each line into list
 		separated_log = logs[data_index].split(' ')
-		
-		while one_stat_index < len(separated_log):
-			stat_part = separated_log[one_stat_index]
-			if stat_dict.get(stat_part):
-				stat_dict[stat_part] += 1
-			else:
-				stat_dict[stat_part] = 1
-			one_stat_index += 1	
+		one_stat_index = 0
+		stat_part = separated_log[one_stat_index]
+		# 'WARNING': {}
+		stat_dict[stat_part] = {}
+		# while one_stat_index < len(separated_log):
+		# 	stat_part = separated_log[one_stat_index]
+		# 	# 'WARNING': {}
+		# 	stat_dict[stat_part] = {}
+		# 	# 'WARNING': { '403': {}
+
+
+		# 	# if stat_dict.get(stat_part):
+		# 	# 	stat_dict[stat_part] += 1
+		# 	# else:
+		# 	# 	stat_dict[stat_part] = 1
+		# 	one_stat_index += 1	
 		data_index +=1
 
 
-		print(stat_dict)
+	print(stat_dict)
 
 
 test_data = [
