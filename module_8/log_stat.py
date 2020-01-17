@@ -1,3 +1,4 @@
+
 """
 You are given a stream of logging statements for a server as a list. Your product manager wants to know what categories of error are the most common, as well as what errors in the most common categories are the most common. 
 
@@ -40,7 +41,19 @@ Return a dictionary with logging statistics, that is formatted like so ( don't w
 
 
 def log_stats(logs):
-    pass
+    
+    # create dictionary to hold the log_stat
+    # loop over the input:
+        # first element is main code
+        # if main code is in the dict:
+            # increment
+        # else set its count to one
+	data_index = 0
+
+	while data_index < len(logs):
+		separated = logs[data_index].split(' ')
+		data_index += 1
+		print(separated)
 
 
 test_data = [
