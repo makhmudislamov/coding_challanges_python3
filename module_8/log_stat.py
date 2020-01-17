@@ -44,35 +44,26 @@ def log_stats(logs):
     
 	stat_dict = {}
 
+
 	data_index = 0
 
 	while data_index < len(logs):
 		# transforming each line into list
-		separated_log = logs[data_index].split(' ')
+		separated_log = logs[data_index].split(':')
+		# this list has two elements: ['[ERROR] 500 Server Error', ' int is not subscriptable']
+		# create another list for the first part
+		# iterate through it and fill nested dict with it
+		# second element of separated log list is the most inner part of stat_dict
+
+		
 		one_stat_index = 0
 		stat_part = separated_log[one_stat_index]
-		# 'WARNING': {}
-		stat_dict[stat_part] = {
-			separated_log[one_stat_index + 1]: {separated_log[one_stat_index + 2]: {}}}
-
-
-
-		# while one_stat_index < len(separated_log):
-		# 	stat_part = separated_log[one_stat_index]
-		# 	# 'WARNING': {}
-		# 	stat_dict[stat_part] = {}
-		# 	# 'WARNING': { '403': {}
-
-
-		# 	# if stat_dict.get(stat_part):
-		# 	# 	stat_dict[stat_part] += 1
-		# 	# else:
-		# 	# 	stat_dict[stat_part] = 1
-		# 	one_stat_index += 1	
+	
 		data_index +=1
 
 
 	print(stat_dict)
+	print(separated_log)
 
 
 test_data = [
