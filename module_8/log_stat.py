@@ -52,7 +52,11 @@ def log_stats(logs):
 		one_stat_index = 0
 		stat_part = separated_log[one_stat_index]
 		# 'WARNING': {}
-		stat_dict[stat_part] = {}
+		stat_dict[stat_part] = {
+			separated_log[one_stat_index + 1]: {separated_log[one_stat_index + 2]: {}}}
+
+
+
 		# while one_stat_index < len(separated_log):
 		# 	stat_part = separated_log[one_stat_index]
 		# 	# 'WARNING': {}
