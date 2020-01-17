@@ -48,12 +48,25 @@ def log_stats(logs):
         # if main code is in the dict:
             # increment
         # else set its count to one
+	stat_dict = {}
+
 	data_index = 0
 
 	while data_index < len(logs):
-		separated = logs[data_index].split(' ')
-		data_index += 1
-		print(separated)
+		one_stat_index = 0
+		separated_log = logs[data_index].split(' ')
+		
+		while one_stat_index < len(separated_log):
+			stat_part = separated_log[one_stat_index]
+			if stat_dict.get(stat_part):
+				stat_dict[stat_part] += 1
+			else:
+				stat_dict[stat_part] = 1
+			one_stat_index += 1	
+		data_index +=1
+
+
+		print(stat_dict)
 
 
 test_data = [
