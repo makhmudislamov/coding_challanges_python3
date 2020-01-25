@@ -54,16 +54,19 @@ def log_stats(logs):
 		# create another list for the first part
 		# iterate through it and fill nested dict with it
 		# second element of separated log list is the most inner part of stat_dict
-
 		
-		one_stat_index = 0
-		stat_part = separated_log[one_stat_index]
+		log_key = separated_log[0]
+		print(log_key)
+		# stat_dict[log_key[1]] = {}
+		data_index += 1
+
 	
-		data_index +=1
+		
 
 
 	print(stat_dict)
-	print(separated_log)
+	# print(stat_key_part)
+	# print(separated_log)
 
 
 test_data = [
