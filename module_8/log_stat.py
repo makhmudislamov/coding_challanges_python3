@@ -57,7 +57,8 @@ def log_stats(logs):
 		# print("separated log", separated_log)
 		log_key = separated_log[0]
 		print(log_key)
-		
+		arr_log_key = list(log_key)
+		print(arr_log_key)
 		# stat_dict[log_key[1]] = {}
 		data_index += 1
 
