@@ -52,13 +52,11 @@ def validate_sudoku_board(board):
     x = 0
     y = 0
     while x < len(board):
-        for item in board[x]:
-            print('checkgin this line', board[x])
-            if item != "." and board[x].count(item) > 1:
-                print("here")
+        current_line = board[x]
+        for item in current_line:
+            if item != "." and current_line.count(item) > 1:
                 return False
-            else:
-                
+            else:    
                 x += 1
     return True
 
