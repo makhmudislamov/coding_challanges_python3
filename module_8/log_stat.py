@@ -48,17 +48,18 @@ def log_stats(logs):
 	data_index = 0
 
 	while data_index < len(logs):
-		# transforming each line into list
-		separated_log = logs[data_index].split(':')
+		# transforming each line into list with 4 elements: 
+		# Format >> ['[ERROR]', '500', 'Server', 'Error:', 'int is not subscriptable']
+		separated_log = logs[data_index].split(' ', 4)
 		# this list has two elements: ['[ERROR] 500 Server Error', ' int is not subscriptable']
 		# create another list for the first part
 		# iterate through it and fill nested dict with it
 		# second element of separated log list is the most inner part of stat_dict
 		# print("separated log", separated_log)
 		log_key = separated_log[0]
-		print("this is string", log_key)
+		print('full string:', separated_log)
+		# print("this is string:", log_key)
 		
-		# stat_dict[log_key[1]] = {}
 		data_index += 1
 
 	
