@@ -57,8 +57,8 @@ def log_stats(logs):
 		inner_index = 0
 		while inner_index < len(separated_log):
 			stat_dict[separated_log[inner_index]] = {}
+			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]] = {}
 			break
-
 	# 		if log_part not in stat_dict:
 	# 			stat_dict[log_part] = 1
 	# 		else:
