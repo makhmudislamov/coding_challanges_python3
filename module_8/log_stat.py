@@ -56,9 +56,8 @@ def log_stats(logs):
 		# second element of separated log list is the most inner part of stat_dict
 		# print("separated log", separated_log)
 		log_key = separated_log[0]
-		print(log_key)
-		arr_log_key = list(log_key)
-		print(arr_log_key)
+		print("this is string", log_key)
+		
 		# stat_dict[log_key[1]] = {}
 		data_index += 1
 
