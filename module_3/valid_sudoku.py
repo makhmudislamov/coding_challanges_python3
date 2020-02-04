@@ -26,24 +26,24 @@ Output: true
 def validate_sudoku_board(board):
     valid_items = ['.', 1, 2, 3, 4, 5, 6, 7, 8, 9]
     # row_ind = 0
-    # iterate through each nested list
+    # # iterate through each nested list
     # for row in board:
-        # print(f"this is row {row}")
-        # for box in row:
+    #     print(f"this is row {row}")
+    #     for box in row:
    
-            # print(f"this is box {box}")
-            # print(box)
-            # this is horizontal check
-            # if valid_items.count(box) >= 1 and box not in valid_items:
-            #     print('here')
-            #     return False
+    #         print(f"this is box {box}")
+    #         print(box)
+    #         # this is horizontal check
+    #         if valid_items.count(box) >= 1 and box not in valid_items:
+    #             print('here')
+    #             return False
 
-        # for col_item in row[row_ind]:
-        #     print("column item", col_item)
-        #     # row_ind += 1
-        #     if valid_items.count(col_item) >= 1 and col_item not in valid_items:
-        #         # return False
-        #         print("here")
+    #     for col_item in row[row_ind]:
+    #         print("column item", col_item)
+    #         # row_ind += 1
+    #         if valid_items.count(col_item) >= 1 and col_item not in valid_items:
+    #             # return False
+    #             print("here")
         
     # return True
 
@@ -64,6 +64,16 @@ def validate_sudoku_board(board):
                 y = 0
                 x += 1
         x += 1
+
+    # create and empty list to append horizontal items
+    # check if vertical list item is not "." and count is not more than 1
+    # if so return False
+    # else keep going
+    # itrate hozizontally
+    # append each item to empty list
+    # check if horizontal list item is not "." and count is not more than 1
+    # if so return False
+    # else empty the list and keep going
 
         
         
