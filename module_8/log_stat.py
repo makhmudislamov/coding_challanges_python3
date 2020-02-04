@@ -56,10 +56,14 @@ def log_stats(logs):
 
 		inner_index = 0
 		while inner_index < len(separated_log):
-			stat_dict[separated_log[inner_index]] = {} # log type
-			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]] = {} # log type code
-			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]][separated_log[inner_index + 2]] = {}
+			log_type = separated_log[inner_index]
+			log_code = separated_log[inner_index + 1]
+			log_status = separated_log[inner_index + 2:len(separated_log)-1]
 			log_message = separated_log[len(separated_log)-1]
+			stat_dict[log_type] = {} 
+			stat_dict[log_type][log_code] = {} 
+			stat_dict[log_type][log_code][separated_log[inner_index + 2]] = {}
+			# print(log_type, log_code, log_status, log_message)
 			
 			break
 	# 		if log_part not in stat_dict:
