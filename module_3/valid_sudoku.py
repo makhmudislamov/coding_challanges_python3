@@ -48,22 +48,34 @@ def validate_sudoku_board(board):
     # return True
 
     # WHILE LOOP
-    y = 0
+    temporary_list = []
     x = 0
-    while x < len(board) + 1:
-        while y < len(board) + 1:
-            # print('inner while')
-            col_item = board[y][x]
-            print(col_item)
-            
-            if col_item not in valid_items and valid_items.count(col_item) >= 1:
-                # return False
-                print('inside if')
-            y += 1
-            if y == 9:
-                y = 0
+    y = 0
+    while x < len(board):
+        for item in board[x]:
+            print('checkgin this line', board[x])
+            if item != "." and board[x].count(item) > 1:
+                print("here")
+                return False
+            else:
+                
                 x += 1
-        x += 1
+    return True
+
+
+        # while y < len(board) + 1:
+        #     # print('inner while')
+        #     col_item = board[y][x]
+        #     print(col_item)
+            
+        #     if col_item not in valid_items and valid_items.count(col_item) >= 1:
+        #         # return False
+        #         print('inside if')
+        #     y += 1
+        #     if y == 9:
+        #         y = 0
+        #         x += 1
+        # x += 1
 
     # create and empty list to append horizontal items
     # check if vertical list item is not "." and count is not more than 1
