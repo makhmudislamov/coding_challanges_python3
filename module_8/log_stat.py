@@ -58,13 +58,15 @@ def log_stats(logs):
 		while inner_index < len(separated_log):
 			log_type = separated_log[inner_index]
 			log_code = separated_log[inner_index + 1]
-			log_status = separated_log[inner_index + 2:len(separated_log)-1]
+			slice_start = separated_log.index(log_code) + 1
+			# print('slice start', slice_start)
+			log_status = separated_log[slice_start:len(separated_log)-1]
 			log_message = separated_log[len(separated_log)-1]
 			stat_dict[log_type] = {} 
 			stat_dict[log_type][log_code] = {} 
 			stat_dict[log_type][log_code][separated_log[inner_index + 2]] = {}
 			# print(log_type, log_code, log_status, log_message)
-			
+			# TODO: list: ['[WARNING]', '403', 'Forbidden:', 'No', 'token in request parameters'] - find better way to split it
 			break
 	# 		if log_part not in stat_dict:
 	# 			stat_dict[log_part] = 1
