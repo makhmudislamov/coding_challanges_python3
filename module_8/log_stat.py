@@ -54,12 +54,16 @@ def log_stats(logs):
 		print('list:', separated_log)
 		data_index += 1
 
-		for log_part in separated_log:
-			if log_part not in stat_dict:
-				stat_dict[log_part] = 1
-			else:
-				stat_dict[log_part] += 1
-	# print(stat_dict)
+		inner_index = 0
+		while inner_index < len(separated_log):
+			stat_dict[separated_log[inner_index]] = {}
+			break
+
+	# 		if log_part not in stat_dict:
+	# 			stat_dict[log_part] = 1
+	# 		else:
+	# 			stat_dict[log_part] += 1
+
 	return stat_dict
 
 	
