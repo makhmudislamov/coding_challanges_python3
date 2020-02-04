@@ -59,6 +59,8 @@ def log_stats(logs):
 			stat_dict[separated_log[inner_index]] = {} # log type
 			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]] = {} # log type code
 			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]][separated_log[inner_index + 2]] = {}
+			log_message = separated_log[len(separated_log)-1]
+			
 			break
 	# 		if log_part not in stat_dict:
 	# 			stat_dict[log_part] = 1
