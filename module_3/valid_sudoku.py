@@ -53,12 +53,18 @@ def validate_sudoku_board(board):
     y = 0
     while x < len(board):
         current_line = board[x]
+        print(current_line)
+        # x+=1
         for item in current_line:
             if item != "." and current_line.count(item) > 1:
-                return False
-            else:    
-                x += 1
+                return False   
+        x += 1
     return True
+
+        # while y < 9:
+        #     current_horizontal_items = board[x][y]
+        #     temporary_list.append(current_horizontal_items)
+        #     y += 1
 
 
         # while y < len(board) + 1:
