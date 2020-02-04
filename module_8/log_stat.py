@@ -56,8 +56,9 @@ def log_stats(logs):
 
 		inner_index = 0
 		while inner_index < len(separated_log):
-			stat_dict[separated_log[inner_index]] = {}
-			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]] = {}
+			stat_dict[separated_log[inner_index]] = {} # log type
+			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]] = {} # log type code
+			stat_dict[separated_log[inner_index]][separated_log[inner_index + 1]][separated_log[inner_index + 2]] = {}
 			break
 	# 		if log_part not in stat_dict:
 	# 			stat_dict[log_part] = 1
