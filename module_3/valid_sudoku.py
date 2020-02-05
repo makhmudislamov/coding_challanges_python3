@@ -21,50 +21,32 @@ Input:
 ]
 Output: true
 """
-
-
-def validate_sudoku_board(board):
-    valid_items = ['.', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    # row_ind = 0
-    # # iterate through each nested list
-    # for row in board:
-    #     print(f"this is row {row}")
-    #     for box in row:
-   
-    #         print(f"this is box {box}")
-    #         print(box)
-    #         # this is horizontal check
-    #         if valid_items.count(box) >= 1 and box not in valid_items:
-    #             print('here')
-    #             return False
-
-    #     for col_item in row[row_ind]:
-    #         print("column item", col_item)
-    #         # row_ind += 1
-    #         if valid_items.count(col_item) >= 1 and col_item not in valid_items:
-    #             # return False
-    #             print("here")
-        
-    # return True
-
-    # WHILE LOOP
-    temporary_list = []
+def is_horizontally_valid(board):
     x = 0
-    y = 0
-    while x < len(board):
+    while x < 9:
         current_line = board[x]
-        print(current_line)
         # x+=1
         for item in current_line:
             if item != "." and current_line.count(item) > 1:
-                return False   
+                return False
         x += 1
     return True
+    
+def is_vertically_valid(board):
+    temporary_list = []
 
         # while y < 9:
-        #     current_horizontal_items = board[x][y]
+        #     current_horizontal_items = current_line[y]
+        #     print(current_horizontal_items)
         #     temporary_list.append(current_horizontal_items)
         #     y += 1
+        #     print(temporary_list)
+    pass
+
+def validate_sudoku_board(board):
+    # WHILE LOOP
+    pass
+
 
 
         # while y < len(board) + 1:
@@ -121,4 +103,5 @@ board = [
             [".", ".", ".", ".", "8", ".", ".", "7", "9"]
         ]
 
-print(validate_sudoku_board(board))
+# print(validate_sudoku_board(board))
+print(is_horizontally_valid(board))
