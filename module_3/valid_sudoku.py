@@ -34,34 +34,33 @@ def is_horizontally_valid(board):
     
 def is_vertically_valid(board):
     temporary_list = []
-
-        # while y < 9:
-        #     current_horizontal_items = current_line[y]
-        #     print(current_horizontal_items)
-        #     temporary_list.append(current_horizontal_items)
-        #     y += 1
-        #     print(temporary_list)
-    pass
+    x = 0
+    y = 0
+    while y < 9:
+        
+        while x < 9:
+            current_line = board[x]
+            current_horizontal_item = current_line[y]
+            # print(current_horizontal_item)
+            temporary_list.append(current_horizontal_item)
+            x += 1
+            if x == 8:
+                print(temporary_list)
+                for item in temporary_list:
+                    if item != "." and temporary_list.count(item) > 1:
+                        return False
+                    else:
+                        temporary_list.clear()
+                        x = 0    
+        y += 1
+    return True
+    
+    
+  
 
 def validate_sudoku_board(board):
     # WHILE LOOP
     pass
-
-
-
-        # while y < len(board) + 1:
-        #     # print('inner while')
-        #     col_item = board[y][x]
-        #     print(col_item)
-            
-        #     if col_item not in valid_items and valid_items.count(col_item) >= 1:
-        #         # return False
-        #         print('inside if')
-        #     y += 1
-        #     if y == 9:
-        #         y = 0
-        #         x += 1
-        # x += 1
 
     # create and empty list to append horizontal items
     # check if vertical list item is not "." and count is not more than 1
@@ -104,4 +103,5 @@ board = [
         ]
 
 # print(validate_sudoku_board(board))
-print(is_horizontally_valid(board))
+print(is_vertically_valid(board))
+# print(is_horizontally_valid(board))
