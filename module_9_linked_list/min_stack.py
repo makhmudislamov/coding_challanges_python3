@@ -22,14 +22,15 @@ class MinStack(object):
         """
         initialize your data structure here.
         """
-        return
+        self.stack = []
 
     def push(self, x):
         """
         :type x: int
         :rtype: None
         """
-        return
+        self.stack.append(x)
+        return self.stack
 
     def pop(self):
         """
