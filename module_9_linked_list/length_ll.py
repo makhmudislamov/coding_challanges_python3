@@ -43,7 +43,7 @@ class LinkedList:
   # implement this method
   # return the length of the linked list, an integer value
     def length(self):
-        ll_len = 0
+        ll_len = 1
         curr_node = self.head
         if self.empty():
             return 0
