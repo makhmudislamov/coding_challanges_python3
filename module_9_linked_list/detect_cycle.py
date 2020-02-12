@@ -57,8 +57,14 @@ class LinkedList:
         
     # implement this method
     # return true if there is a cycle in this linked list
-    def has_cycle(self):
-        # iterate over the nodes
-        # count 'next's 
-        # if any node has next more then once
-        # return True
+    def has_cycle(self): 
+        temporary_list = []
+        curr_node = self.head
+        while curr_node != None:     
+            if curr_node in temporary_list:
+                return True
+            else:
+                temporary_list.append(curr_node)
+                curr_node = curr_node.next
+        return False
+
