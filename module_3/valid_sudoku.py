@@ -40,37 +40,30 @@ def is_vertically_valid(board):
         
         while x < 9:
             current_line = board[x]
-            current_horizontal_item = current_line[y]
-            # print(current_horizontal_item)
+            current_horizontal_item = current_line[y] # index out of range when whole board is covered. why?
+            print('x and y', x, y)
             temporary_list.append(current_horizontal_item)
             x += 1
-            if x == 8:
+            if x == 9:
+                x = 0
+                # y += 1
                 print(temporary_list)
                 for item in temporary_list:
                     if item != "." and temporary_list.count(item) > 1:
                         return False
                     else:
                         temporary_list.clear()
-                        x = 0    
-        y += 1
+                        y += 1
+                  
     return True
     
     
-  
-
 def validate_sudoku_board(board):
     # WHILE LOOP
-    pass
+    if is_horizontally_valid(board) is True and is_vertically_valid(board) is True:
+        return True
+    return False
 
-    # create and empty list to append horizontal items
-    # check if vertical list item is not "." and count is not more than 1
-    # if so return False
-    # else keep going
-    # itrate hozizontally
-    # append each item to empty list
-    # check if horizontal list item is not "." and count is not more than 1
-    # if so return False
-    # else empty the list and keep going
 
         
         
@@ -91,7 +84,7 @@ def validate_sudoku_board(board):
 
 # should return False
 board = [
-            ["8", "3", ".", ".", "7", ".", ".", ".", "."],
+            [".", "3", ".", ".", "7", ".", ".", ".", "."],
             ["6", ".", ".", "1", "9", "5", ".", ".", "."],
             [".", "9", "8", ".", ".", ".", ".", "6", "."],
             ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
@@ -102,6 +95,7 @@ board = [
             [".", ".", ".", ".", "8", ".", ".", "7", "9"]
         ]
 
+
+print('vert', is_vertically_valid(board))
+# print('hor', is_horizontally_valid(board))
 # print(validate_sudoku_board(board))
-print(is_vertically_valid(board))
-# print(is_horizontally_valid(board))
