@@ -61,4 +61,14 @@ class LinkedList:
 
     # implement this method
     def insert(self, data, index):
+        # edge case1: insert at the end = extending the linkedlist
+        # edge case2: inserting at index 0 = insert at the head of the ll
+
+        # set a counter to keep track of which node you reached
+        # set current node to head
+        # iterate over the nodes
+        # when you reach the index (counter = wanted index)
+        # current node = New Node
+        # link prev node to new node
+        # and link new node to next node
         pass
