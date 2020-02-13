@@ -87,5 +87,25 @@ class LinkedList:
         new_node.next = curr_node.next  # pointing new node to next node
         curr_node.next = new_node # pointing previous node to new node
 
+    # MODEL SOLUTION
+    # def insert(self, data, index):
+    #     if index == 0:
+    #         new_node = LinkedNode(data)
+    #         new_node.next = self.head
+    #         self.head = new_node
+    #         return
+    #     curr = self.head
+    #     count = index
+    #     while count > 1:
+    #         curr = curr.next
+    #         count -= 1
+    #     new_node = LinkedNode(data)
+    #     prev = curr
+    #     next = curr.next
+    #     prev.next = new_node
+    #     new_node.next = next
+    #     if next is None:
+    #         self.tail = new_node
+
 
      
