@@ -71,4 +71,21 @@ class LinkedList:
         # current node = New Node
         # link prev node to new node
         # and link new node to next node
-        pass
+
+        new_node = LinkedNode(data)
+        # adding node at the beginning
+        if index == 0:
+            # pointing new node to (old) head and pointing head to new node
+            new_node.next = self.head
+            self.head = new_node
+            
+        curr_node = self.head
+        # iterating over the nodes until one node before the target
+        for _ in range(index - 1):
+            curr_node = curr_node.next
+        
+        new_node.next = curr_node.next  # pointing new node to next node
+        curr_node.next = new_node # pointing previous node to new node
+
+
+     
