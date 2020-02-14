@@ -38,17 +38,25 @@ class LinkedList:
   # implement this method
     def kth_from_the_end(self, k):
         # iterate over the LL
-        curr_node = self.head
-        node_position = 0
-        while curr_node.next != None:
-            curr_node = curr_node.next
-            node_position += 1
+        # BRUTE FORCE
+        # curr_node = self.head
+        # node_position = 0
+        # while curr_node.next != None:
+        #     curr_node = curr_node.next
+        #     node_position += 1
 
-        curr_node = self.head
-        for _ in range(node_position - k):
-            curr_node = curr_node.next
+        # curr_node = self.head
+        # for _ in range(node_position - k):
+        #     curr_node = curr_node.next
 
-        return curr_node.data        
+        # return curr_node.data  
+
+        # TWO POINTERS METHOD
+        # have two pointers
+        # one moves k times
+        # second one moves one step until k reaches None
+        # return data at second pointer node
+        # use two loops      
 
 
 ll = LinkedList()
