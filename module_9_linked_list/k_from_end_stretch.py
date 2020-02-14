@@ -56,10 +56,48 @@ class LinkedList:
         # one moves k times
         # second one moves one step until k reaches None
         # return data at second pointer node
-        # use two loops      
+        # use two loops 
+        # k_times_mover = 0
+        every_kth_node = self.head
+        while every_kth_node.next != None:
+            every_kth_node = every_kth_node.next
+            # k_times_mover += k
+            print(every_kth_node.data)
+        
+        kth_element = 0
+        curr_node = self.head
+        for _ in range(k_times_mover):
+            # kth_element += 1
+            curr_node = curr_node.next
+            print(curr_node.data)
+        # return curr_node.data
+        pass     
 
 
 ll = LinkedList()
-ll.extend(['A', 'B', 'C', 'D', 'E'])
+ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
 
-print(ll.kth_from_the_end(1))
+print(ll.kth_from_the_end(2))
+
+# MODEL SOLUTION
+# borrowed from previous problem solution
+#   def length(self):
+#     curr = self.head
+#     count = 0
+#     while not (curr is None):
+#       curr = curr.next
+#       count += 1
+#     return count
+
+#   # borrowed from previous problem
+#   def get(self, index):
+#     curr = self.head
+#     count = index
+#     while count > 0:
+#       curr = curr.next
+#       count -= 1
+#     return curr.data
+
+#   # implement this method
+#   def kth_from_the_end(self, k):
+#     return self.get(self.length() - k - 1)
