@@ -57,4 +57,22 @@ class LinkedList:
         # and next nodes
         # iterate over the ll
         # reverse pointers
-        pass
+        prev_node = self.head
+        next_node = prev_node.next
+        # print(self.tail.data)
+        while next_node.next != None:
+            # tail   
+            next_node = next_node.next
+            # pointing to prev node
+        # exchanged head and tail
+        self.tail, self.head = self.head, self.tail
+        print(self.head.data)
+        print(self.tail.data)
+            
+
+
+ll = LinkedList()
+ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
+# print(ll)
+ll.reverse()
+
