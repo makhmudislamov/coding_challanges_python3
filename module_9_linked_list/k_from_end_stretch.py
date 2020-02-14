@@ -39,10 +39,11 @@ class LinkedList:
     def kth_from_the_end(self, k):
         # iterate over the LL
         curr_node = self.head
-        node_position = 1
+        node_position = 0
         while curr_node.next != None:
             curr_node = curr_node.next
             node_position += 1
+
         curr_node = self.head
         for _ in range(node_position - k):
             curr_node = curr_node.next
