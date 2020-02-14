@@ -53,4 +53,8 @@ class LinkedList:
 
   # implement this method
     def reverse(self):
+        # declare head
+        # and next nodes
+        # iterate over the ll
+        # reverse pointers
         pass
