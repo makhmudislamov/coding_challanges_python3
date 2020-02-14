@@ -37,4 +37,15 @@ class LinkedList:
 
   # implement this method
     def kth_from_the_end(self, k):
-        pass
+        # iterate over the LL
+        curr_node = self.head
+        
+        while curr_node != None:
+            curr_node = curr_node.next
+            print(curr_node.data)
+
+
+ll = LinkedList()
+ll.extend([1, 2, 3, 4, 5])
+
+ll.kth_from_the_end(1)
