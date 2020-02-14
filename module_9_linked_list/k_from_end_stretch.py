@@ -58,6 +58,7 @@ class LinkedList:
         # return data at second pointer node
         # use two loops 
         # k_times_mover = 0
+        # TODO: comeback to completed this approach
         every_kth_node = self.head
         while every_kth_node.next != None:
             every_kth_node = every_kth_node.next
