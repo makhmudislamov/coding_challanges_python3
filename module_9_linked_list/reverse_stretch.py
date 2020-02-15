@@ -53,37 +53,31 @@ class LinkedList:
 
   # implement this method
     def reverse(self):
-        # declare head
-        # and next nodes
-        # iterate over the ll
-        # reverse pointers
-        # self.tail, self.head = self.head, self.tail
-        
-        # self.head.next = 
-        # print('head', self.head.data)
-        # print('tail', self.tail.data)
-        curr_node = self.head
-        # setup a temporary next
-        twin_node = self.head
-        while curr_node.next != None:
-            curr_node = curr_node.next
-            twin_node = twin_node.next
-            print('cur', curr_node.data)
-            print('twin', twin_node.data)
+        # declared previous node starting with None
+        # until head doesnt point to None
+        # use temporary pointer starting with head
+        # move head to next node
+        # move temporary pointer to previous node
+        # set previous node to temporary pointer
+        # NOTE: this doesn't return 5->4->3->2->1->NULL
+        # this returns NULL<-1<-2<-3<-4<-5 
+        previous_node = None
+        while self.head:            
+            temporary_pointer = self.head
+            self.head = self.head.next
+            temporary_pointer.next = previous_node
+            previous_node = temporary_pointer            
+        return self
+
+
+
             
 
-        # exchanged head and tail
-        # self.tail, self.head = self.head, self.tail
-        # self.tail.next = None
-        # print('head', self.head.data)
-        # print('tail', self.tail.data)
-
-
-
-
 ll = LinkedList()
-ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
+ll.extend([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 ll.reverse()
+print(ll.to_array())
+
 
 
