@@ -59,26 +59,28 @@ class LinkedList:
         # use two loops 
         # k_times_mover = 0
         # TODO: comeback to completed this approach
-        every_kth_node = self.head
-        while every_kth_node.next != None:
-            every_kth_node = every_kth_node.next
-            # k_times_mover += k
-            print(every_kth_node.data)
-        
-        kth_element = 0
-        curr_node = self.head
-        for _ in range(k_times_mover):
-            # kth_element += 1
-            curr_node = curr_node.next
-            print(curr_node.data)
-        # return curr_node.data
-        pass     
+        current_node = self.head
+        k_step_ahead_node = self.head
+        counter = 0
+        # the following loop will move the pointer to kth node
+        while k_step_ahead_node and counter < k:
+            k_step_ahead_node = k_step_ahead_node.next
+            counter += 1
+        # base case k is larger than linkedlist
+        if not k_step_ahead_node:
+            return f"{k} is greater than length of the LinkedList"
+        # in this loop first pointer starts at the head and second pointer is on kth element
+        # when second pointer equals to None, we reach the kth element from the end
+        while current_node and k_step_ahead_node:
+            current_node = current_node.next
+            k_step_ahead_node = k_step_ahead_node.next
+        return current_node.data  
 
 
 ll = LinkedList()
 ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
 
-print(ll.kth_from_the_end(2))
+print(ll.kth_from_the_end(1))
 
 # MODEL SOLUTION
 # borrowed from previous problem solution
