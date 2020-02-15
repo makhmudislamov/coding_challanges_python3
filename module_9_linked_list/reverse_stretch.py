@@ -68,7 +68,21 @@ class LinkedList:
             temporary_pointer.next = previous_node
             previous_node = temporary_pointer
         self.head = previous_node
-        return self         
+        return self
+        # TODO: do it recursively
+
+    # MODEL SOLUTION
+    # curr = self.head.next
+    # rev = self.head
+    # rev.next = None
+    # # re-assign head and tail variables
+    # self.head = self.tail
+    # self.tail = rev
+    # while curr != None:
+    #   next = curr.next
+    #   curr.next = rev
+    #   rev = curr
+    #   curr = next
 
 ll = LinkedList()
 ll.extend([1, 2, 3, 4, 5, 6, 7, 8, 9])
