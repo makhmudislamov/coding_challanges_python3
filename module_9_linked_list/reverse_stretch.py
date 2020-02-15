@@ -66,17 +66,14 @@ class LinkedList:
             temporary_pointer = self.head
             self.head = self.head.next
             temporary_pointer.next = previous_node
-            previous_node = temporary_pointer            
-        return self
-
-
-
-            
+            previous_node = temporary_pointer
+        self.head = previous_node
+        return self         
 
 ll = LinkedList()
 ll.extend([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-ll.reverse()
+print(ll.reverse())
 print(ll.to_array())
 
 
