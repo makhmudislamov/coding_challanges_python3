@@ -58,12 +58,13 @@ class LinkedList:
         # return data at second pointer node
         # use two loops 
         # k_times_mover = 0
-        # TODO: comeback to completed this approach
+        
         current_node = self.head
         k_step_ahead_node = self.head
         counter = 0
         # the following loop will move the pointer to kth node
-        while k_step_ahead_node and counter < k:
+        # NOTE: counter <= k starts counting from 0. counter < k starts counting from 1
+        while k_step_ahead_node and counter <= k:
             k_step_ahead_node = k_step_ahead_node.next
             counter += 1
         # base case k is larger than linkedlist
@@ -80,7 +81,7 @@ class LinkedList:
 ll = LinkedList()
 ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
 
-print(ll.kth_from_the_end(1))
+print(ll.kth_from_the_end(0))
 
 # MODEL SOLUTION
 # borrowed from previous problem solution
