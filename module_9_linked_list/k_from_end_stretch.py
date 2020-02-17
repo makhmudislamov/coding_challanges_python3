@@ -81,7 +81,7 @@ class LinkedList:
 ll = LinkedList()
 ll.extend(['A', 'B', 'C', 'D', 'E', 'F', 'M'])
 
-print(ll.kth_from_the_end(0))
+print(ll.kth_from_the_end(2))
 
 # MODEL SOLUTION
 # borrowed from previous problem solution
