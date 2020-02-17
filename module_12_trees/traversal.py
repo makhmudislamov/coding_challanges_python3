@@ -43,8 +43,20 @@ class Tree:
 
     def level_order_traversal(self):
         # return the tree as a list in a level-order sequence
+        output_array = []
+        if not self.root:
+            return []
+        
+        queue = [self.root]
+        while len(queue) > 0:
+            cur_node = queue.pop(0)
+            output_array.append(cur_node.data)
+            if cur_node.left:
+                queue.append(cur_node.left)
+            if cur_node.right:
+                queue.append(cur_node.right)
+        return output_array
 
-        return []
 
     def pre_order_traversal(self):
         # return the tree as a list in a pre-order sequence (dfs)
@@ -58,3 +70,15 @@ class Tree:
         # return the tree as a list in a post-order sequence (dfs)
 
         return []
+
+
+tree = Tree()
+tree.root = Node(9)
+
+tree.root.left = Node(5)
+tree.root.right = Node(11)
+
+tree.root.left.left = Node(3)
+tree.root.left.right = Node(7)
+
+print(tree.level_order_traversal())
