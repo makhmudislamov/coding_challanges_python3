@@ -60,7 +60,15 @@ class Tree:
 
     def pre_order_traversal(self):
         # return the tree as a list in a pre-order sequence (dfs)
-        return []
+        output_arr = []
+        def dfs(node):           
+            if node:
+                output_arr.append(node.data)
+                dfs(node.left)
+                dfs(node.right)
+        dfs(self.root)
+        return output_arr
+
 
     def in_order_traversal(self):
         # return the tree as a list in-order (dfs)
@@ -81,4 +89,4 @@ tree.root.right = Node(11)
 tree.root.left.left = Node(3)
 tree.root.left.right = Node(7)
 
-print(tree.level_order_traversal())
+print(tree.pre_order_traversal())
