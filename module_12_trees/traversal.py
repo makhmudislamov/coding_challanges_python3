@@ -72,7 +72,15 @@ class Tree:
 
     def in_order_traversal(self):
         # return the tree as a list in-order (dfs)
-        return []
+        output_arr = []
+
+        def dfs(node):
+            if node:
+                dfs(node.left)
+                output_arr.append(node.data)
+                dfs(node.right)
+        dfs(self.root)
+        return output_arr
 
     def post_order_traversal(self):
         # return the tree as a list in a post-order sequence (dfs)
@@ -89,4 +97,4 @@ tree.root.right = Node(11)
 tree.root.left.left = Node(3)
 tree.root.left.right = Node(7)
 
-print(tree.pre_order_traversal())
+print(tree.in_order_traversal())
