@@ -45,4 +45,20 @@ class Tree:
         return nodes
 
     def add(self, node):
-        pass
+        if self.root is None:
+            self.root = node
+        
+        def insert(root, node):
+            
+            if node.data < root.data:
+                if root.left is None:
+                    node.left = node
+                else:
+                    insert(root.left, node)
+            else:
+                if root.right is None:
+                    root.right = node
+                else:
+                    insert(root.right, node)
+        root = self.root
+        insert(root, node)
