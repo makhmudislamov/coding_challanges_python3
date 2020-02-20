@@ -44,21 +44,36 @@ class Tree:
         dfs(self.root)
         return nodes
 
+    def insert(self, root, node):
+
+        if node.data < root.data:
+            if root.left is None:
+                node.left = node
+            else:
+                self.insert(root.left, node)
+        else:
+            if root.right is None:
+                root.right = node
+            else:
+                self.insert(root.right, node)
+
     def add(self, node):
         if self.root is None:
             self.root = node
-        
-        def insert(root, node):
-            
-            if node.data < root.data:
-                if root.left is None:
-                    node.left = node
-                else:
-                    insert(root.left, node)
-            else:
-                if root.right is None:
-                    root.right = node
-                else:
-                    insert(root.right, node)
-        root = self.root
-        insert(root, node)
+        else:
+            root = self.root
+            self.insert(root, node)
+
+
+tree = Tree()
+# tree.root = Node(9)
+
+# tree.root.left = Node(5)
+# tree.root.right = Node(11)
+
+# tree.root.left.left = Node(3)
+# tree.root.left.right = Node(7)
+
+tree.add(Node(5))
+tree.add(Node(25))
+print(tree.in_order_traversal())
