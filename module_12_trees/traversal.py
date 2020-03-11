@@ -92,7 +92,7 @@ class Tree:
                 dfs(node.right)
                 output_arr.append(node.data)
         dfs(self.root)
-        return output_arr
+        return output_arr   
 
 
 tree = Tree()
